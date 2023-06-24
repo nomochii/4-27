@@ -4,8 +4,7 @@
   <%= link_to book_path(book.id) do %>
     <p>Title：<%= book.title %></p>
   <% end %>
-  <!--<p>Title：<%#= book.title %></p>-->
   <p>Opinion：<%= book.opinion %></p>
-  <!--<p>name：<%#= book.user.name %></p>-->
+  <p>name：<%= book.user.name %></p>
 </div>
 <% end %>
