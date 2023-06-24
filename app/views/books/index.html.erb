@@ -1,2 +1,9 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<%= render 'list' %>
+<% @books.each do |book| %>
+<div>
+  <!--<p>投稿ユーザー画像：<%#= image_tag 'sample-author1.jpg' %></p>-->
+  <p>Title：<%= book.title %></p>
+  <p>Opinion：<%= book.opinion %></p>
+  <!--<p>name：<%#= book.user.name %></p>-->
+</div>
+<% end %>

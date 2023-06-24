@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2023_06_23_011644) do
   end
 
   create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "opinion"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

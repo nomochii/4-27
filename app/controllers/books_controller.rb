@@ -1,7 +1,4 @@
 class BooksController < ApplicationController
-  def new
-    @book = Book.new
-  end
 
   def create
     @book = Book.new(book_params)
@@ -11,6 +8,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    @books = Book.all
+    @book = Book.new
   end
 
   def show
@@ -21,7 +20,7 @@ class BooksController < ApplicationController
 
   private
 
-  def post_image_params
-    params.require(:book).permit(:title, :image, :opinion)
+  def book_params
+    params.require(:book).permit(:title, :opinion)
   end
 end
