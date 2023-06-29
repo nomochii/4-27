@@ -1,7 +1,13 @@
-<h1>User info</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+  </head>
+
+<body>
+  <h1>User info</h1>
 <div>
   <p><%= image_tag @user.user.get_profile_image(100,100) %></p>
-  <!--<%#= image_tag @user.get_profile_image(100,100) %>-->
   <h3>name : <%= @user.name %></h3>
    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
@@ -31,3 +37,8 @@
     </div>
   </div>
 </footer>
+  </body>
+</html>
+
+
+
