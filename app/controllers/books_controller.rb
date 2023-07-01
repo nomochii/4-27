@@ -6,6 +6,9 @@ class BooksController < ApplicationController
     @book.save
     redirect_to  @book
   end
+  
+  def new
+  end
 
   def index
     @books = Book.all

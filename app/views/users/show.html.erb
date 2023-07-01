@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -33,6 +34,16 @@
 
 <h1>Books</h1>
 <% @books.each do |book| %>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
 <div>
   <%= link_to book_path(book.id) do %>
   <% end %>

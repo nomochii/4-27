@@ -9,7 +9,7 @@
 <div>
   <p><%= image_tag @user.user.get_profile_image(100,100) %></p>
   <h3>name : <%= @user.name %></h3>
-   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
 
 <h1>New book</h1>
@@ -22,10 +22,19 @@
       <%= f.submit 'Create Book' %>
     </div>
   <% end %>
+  
+<%= render 'list' %>
+<h1>Book detail</h1>
 
+<% @books.each do |book| %>
 
-
-
+  <p>Title</p>
+  <%= link_to book_path(book.id) do %>
+  <p>Title：<%= book.title %></p>
+  <% end %>
+  <p>Opinion：<%= book.opinion %></p>
+  <!--<p>投稿ユーザー画像：<%#= image_tag book.user.get_profile_image(100,100) %></p>-->
+  <p><%= link_to book.user.name do %></p>
 
 
 <footer>
