@@ -7,23 +7,32 @@
   </ul>
 <% end %>
 
-<%= render 'books/list', books: @books %>
- </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
 
-<div class="col-md-8 offset-md-1">
+      <%= render 'books/list', books: @books %>
+    </div>
 
-<% @books.each do |book| %>
-  <%= link_to book_path(book.id) do %>
-  <% end %>
-  <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
-  <p>Title：<%= book.title %></p>
-  <p>Opinion：<%= book.opinion %></p>
-  <p>name：<%= book.user.name %></p>
-<% end %>
 
+    <div class="col-md-8 offset-md-1">
+      <h1>Books</h1>
+      <thead>
+    		<tr>
+    			<th>Title</th>
+    			<th>Opinion</th>
+    		</tr>
+    	</thead>
+
+      <% @books.each do |book| %>
+
+        <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
+        <p>Title : <%= link_to book.title,book_path(book.id)%></p>
+        <p>Opinion：<%= book.opinion %></p>
+        <p>name：<%= book.user.name %></p>
+      <% end %>
+
+    </div>
   </div>
 </div>
 
-<footer>
-  <p>CopyRight Infratop.inc</p>
-</footer>
