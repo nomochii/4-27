@@ -1,14 +1,23 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Bookers2</title>
   </head>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
 <body>
   <h1>User info</h1>
 <div>
-  <p><%= image_tag @user.user.get_profile_image(100,100) %></p>
-  <h3>name : <%= @user.name %></h3>
+  <p><%= image_tag @user.get_profile_image(100,100) %></p>
+  <p><%= @user.name %></p>
+  <h3>introduction</h3>
   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>
 
@@ -22,8 +31,17 @@
       <%= f.submit 'Create Book' %>
     </div>
   <% end %>
-  
-<%= render 'list' %>
+    </div>
+
+     <div class="col-md-8 offset-md-1">
+
+
+    </div>
+  </div>
+</div>
+
+
+<%#= render 'list' %>
 <h1>Book detail</h1>
 
 <% @books.each do |book| %>
