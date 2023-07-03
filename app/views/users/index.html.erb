@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3">
 
-      <%= render 'books/list', books: @books,user: @user %>
+      <%= render 'books/list', newbook: @newbook,user: @user %>
     </div>
 
 
@@ -15,11 +15,11 @@
     		</tr>
     	</thead>
 
-      <% @books.each do |book| %>
+      <% @users.each do |user| %>
 
-        <p><%= image_tag book.user.get_profile_image(100,100) %></p>
-        <p><%= book.user.name %></p>
-        <p>Show <%= link_to book.title,book_path(book.id)%></p>
+        <p><%= image_tag user.get_profile_image(100,100) %></p>
+        <p><%= user.name %></p>
+        <p><%= link_to "show",user_path(user.id)%></p>
 
       <% end %>
 
