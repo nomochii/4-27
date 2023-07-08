@@ -17,7 +17,14 @@
 
 <h2>New book</h2>
 
-
+  <% if newbook.errors.any? %>
+    <%= newbook.errors.count %>件のエラーが発生しました
+    <ul>
+      <% newbook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <%= form_with model: newbook do |f| %>
     <h4>Title</h4>
