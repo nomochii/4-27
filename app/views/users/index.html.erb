@@ -8,19 +8,21 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Userss</h2>
-      <thead>
-    		<tr>
-    			<th>Image</th>
-    			<th>name</th>
-    		</tr>
-    	</thead>
+      <table class="teble">
+        <thead>
+    		  <tr>
+    			  <th>Image</th>
+    			  <th>name</th>
+    	  	</tr>
+    	  </thead>
 
       <% @users.each do |user| %>
-
-        <p><%= image_tag user.get_profile_image(100,100) %></p>
-        <p><%= user.name %></p>
-        <p><%= link_to "show",user_path(user.id)%></p>
-
+        <tbody>
+          <td><%= image_tag user.get_profile_image(100,100) %></td>
+          <td><%= user.name %></td>
+          <td><%= link_to "show",user_path(user.id)%></td>
+        </tbody>
+      </table>
       <% end %>
 
     </div>

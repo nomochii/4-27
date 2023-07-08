@@ -12,17 +12,20 @@
 
     <div class="col-md-8 offset-md-1">
       <h1>Book detail</h1>
-
-        <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
-        <p><%= @book.user.name %></p>
-        <p>Title : <%= link_to @book.title,book_path(@book.id)%></p>
-        <p><%= @book.opinion %></p>
-
-
-        <% if @book.user == current_user %>
-          <%= link_to "Edit", edit_book_path(@book.id) %>
-          <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-        <% end %>
+        <table class="teble">
+          <tbody>
+            <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
+            <p><%= link_to @book.user.name,user_path(@user.id) %></p>
+            <td><%= link_to @book.title,book_path(@book.id)%></td>
+            <td><%= @book.opinion %></td>
+            <td>
+              <% if @book.user == current_user %>
+              <%= link_to "Edit", edit_book_path(@book.id) %>
+              <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+             <% end %>
+            </td>
+          </tbody>
+        </table>
     </div>
   </div>
 </div>

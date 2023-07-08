@@ -9,22 +9,17 @@
   <h1>User info</h1>
 <div>
   <p><%= image_tag user.get_profile_image(100,100) %></p>
-  <p>name : <%= user.name %></p>
+  <table class="teble"></table>
+    <thead>
+      <th>name</th>
+      <th><%= user.name %></th>
+    </thead>
   <h3>introduction</h3>
   <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
 </div>
 
 
 <h2>New book</h2>
-
-  <% if newbook.errors.any? %>
-    <%= newbook.errors.count %>件のエラーが発生しました
-    <ul>
-      <% newbook.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
 
   <%= form_with model: newbook do |f| %>
     <h4>Title</h4>
