@@ -7,16 +7,32 @@
     </ul>
   <% end %>
 
-<%= render 'books/list', newbook: @newbook,user: @user %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
 
-<% @books.each do |book| %>
-<div>
+      <%= render 'books/list', newbook: @newbook,user: @user %>
+    </div>
+
+    <div class="col-md-8 offset-md-1">
+      <h1>Books</h1>
+      <table class="teble">
+        <thead>
+          <tr>
+    			  <th>Iitle</th>
+    			  <th>Opinion</th>
+    	  	</tr>
+    	  </thead>
+
+    	  <% @books.each do |book| %>
+    	  <div>
   <%= link_to book_path(book.id) do %>
     <p>Title：<%= book.title %></p>
   <% end %>
 
-  <p>Opinion：<%= book.opinion %></p>
+  <p>Opinion：<%= book.body %></p>
   <p>投稿ユーザー画像：<%= image_tag @user.get_profile_image(100,100) %></p>
   <p>name：<%= book.user.name %></p>
 </div>
 <% end %>
+
