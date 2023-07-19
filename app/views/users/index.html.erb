@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-md-3">
@@ -18,7 +22,7 @@
 
       <% @users.each do |user| %>
         <tbody>
-          <td><%= image_tag user.get_profile_image(100,100) %></td>
+          <td><%= image_tag user.get_profile_image(100,100) %>
           <td><%= user.name %></td>
           <td><%= link_to "show",user_path(user.id)%></td>
         </tbody>
