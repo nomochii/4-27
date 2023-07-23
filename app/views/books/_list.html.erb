@@ -13,7 +13,9 @@
       <th>introduction</th>
       <th><%= user.introduction %></th>
     </thead>
-  <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
+  <p><%= link_to edit_user_path(user) do %>
+       <i class="fa-solid fa-user-gear"></i>
+     <% end %></p>
 </div>
 
 
